@@ -25,6 +25,8 @@ content+=cnt
 content+=('<br>-------<br>')
 content+=('End of message')
 print(content)
+
+
 smtp_server="smtp.gmail.com"
 port=587
 sender_email="nikhileshmeher2021@gmail.com"
@@ -34,7 +36,7 @@ message["Subject"]="Weather today! "+"Dated: "+str(now.day)+"/"+str(now.month)+"
 message["From"]=sender_email
 message["To"]=receiver_email
 message.attach(MIMEText(content,'html'))
-password="Bugatti@16.4"
+password=getpass.getpass(prompt="Enter your password: ")
 context=ssl.create_default_context()
 server=smtplib.SMTP(smtp_server,port)
 server.starttls(context=context)
