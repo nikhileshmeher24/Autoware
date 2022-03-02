@@ -24,7 +24,6 @@ cnt=extract_weather(url)
 content+=cnt
 content+=('<br>-------<br>')
 content+=('End of message')
-print(content)
 
 
 smtp_server="smtp.gmail.com"
