@@ -17,8 +17,8 @@ def extract_weather(url):
     info="City: "+city+" | Temperature: "+temp+" | Sky: "+sky+"\n"
     return info
 
-sender_email="nikhileshmeher2021@gmail.com"
-receiver_email="nikhileshmeher24@gmail.com"
+sender_email=""
+receiver_email=""
 password=getpass.getpass(prompt="Enter your password: ")
 city=input("Enter city")
 url="https://www.timeanddate.com/weather/india/"+city
