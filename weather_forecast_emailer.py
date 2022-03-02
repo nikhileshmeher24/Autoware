@@ -4,6 +4,8 @@ import smtplib,ssl,getpass
 import datetime
 from email.mime.multipart import MIMEMultipart
 from email.mime.text import MIMEText
+
+
 content=''
 def extract_weather(url):
     print("Extracting weather\n")
@@ -12,7 +14,7 @@ def extract_weather(url):
     soup=BeautifulSoup(responce.content,'html.parser')
     temp=soup.find("div", attrs={"class": "h2"}).text
     sky=soup.find("p").text
-    info="City: "+city+" \nTemperature: "+temp+"\nSky: "+sky+"\n"
+    info="City: "+city+" | Temperature: "+temp+" | Sky: "+sky+"\n"
     return info
 
 now=datetime.datetime.now()
@@ -25,14 +27,14 @@ content+=('End of message')
 print(content)
 smtp_server="smtp.gmail.com"
 port=587
-sender_email=""
-receiver_email=""
+sender_email="nikhileshmeher2021@gmail.com"
+receiver_email="nikhileshmeher24@gmail.com"
 message=MIMEMultipart()
 message["Subject"]="Weather today! "+"Dated: "+str(now.day)+"/"+str(now.month)+"/"+str(now.year)
 message["From"]=sender_email
 message["To"]=receiver_email
 message.attach(MIMEText(content,'html'))
-password=""
+password="Bugatti@16.4"
 context=ssl.create_default_context()
 server=smtplib.SMTP(smtp_server,port)
 server.starttls(context=context)
