@@ -1,7 +1,6 @@
-import smtplib,requests
-from bs4 import BeautifulSoup
-import smtplib,ssl,getpass
+import smtplib,ssl,getpass,reuests
 import datetime
+from bs4 import BeautifulSoup
 from email.mime.multipart import MIMEMultipart
 from email.mime.text import MIMEText
 
